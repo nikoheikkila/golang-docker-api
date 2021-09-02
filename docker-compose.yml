@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  app:
+    image: nikoheikkila/golang-docker-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '${PORT:-3000}:3000'
