@@ -24,7 +24,7 @@ curl -x GET http://localhost:3000/users | jq
 1. Open this repository in [github.com](https://github.com/nikoheikkila/golang-docker-api)
 2. Press <kbd>.</kbd> to launch the GitHub web editor
 3. From the bottom-left corner, choose _Continue working on_ and choose _Create New Codespace_
-4. Wait for the build to finish, and run `go run main.go` to start the server inside the running container
+4. Wait for the build to finish, and run `make start` to start the server inside the running container, or `make build` to compile
 
 ### VS Code Dev Container
 
