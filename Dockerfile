@@ -63,4 +63,4 @@ EXPOSE 3000
 # Launch the application
 # This sets the PID=1 for our application, which means that the container dies in case this application crashes
 # Restart policies will help us to keep the container running
-CMD ./server
+CMD [ "./server" ]
