@@ -11,3 +11,6 @@ format:
 
 test:
 	go test -v ./...
+
+docker-test:
+	bash tests/test.sh

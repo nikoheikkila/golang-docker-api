@@ -1,0 +1,7 @@
+GET http://localhost:3000
+
+HTTP/1.1 200
+
+[Asserts]
+duration < 1000
+jsonpath "$.status" == "OK"
