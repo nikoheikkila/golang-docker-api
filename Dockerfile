@@ -20,8 +20,8 @@ RUN go mod download && go mod verify
 # This is done separately so Docker can use its cache effectively
 COPY . .
 
-# Compile the application to a single binary called 'api'
-RUN go build -ldflags="-w -s" -o api main.go
+# Compile the application to a single binary called 'server'
+RUN go build -ldflags="-w -s" -o server main.go
 
 ### STAGE 2 ###
 
@@ -46,7 +46,7 @@ RUN adduser \
 
 # Copy the compiled binary from 'build' stage
 # Binary permissions are given to our custom user to make the app runnable
-COPY --from=build --chown=${USER}:${USER} /api/ .
+COPY --from=build --chown=${USER}:${USER} /api/server .
 
 # Switch to our new user
 USER ${USER}:${USER}
@@ -63,4 +63,4 @@ EXPOSE 3000
 # Launch the application
 # This sets the PID=1 for our application, which means that the container dies in case this application crashes
 # Restart policies will help us to keep the container running
-CMD ./api
+CMD ./server

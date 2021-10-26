@@ -1,0 +1,6 @@
+*
+!app/
+!routes/
+!.env
+!go.mod
+!*.go
